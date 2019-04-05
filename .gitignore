@@ -1,0 +1,7 @@
+.idea
+.DS_Store
+.buildpath
+.project
+.settings
+.env
+docker-compose.yml

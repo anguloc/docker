@@ -1,0 +1,17 @@
+version: '2.0'
+
+services:
+  gk-php:
+    image: "registry.cn-shenzhen.aliyuncs.com/gkz/gk:v2"
+    container_name: gk-php
+    privileged: true
+    volumes:
+      - ${PROJECT_PATH}:/var/www/html
+
+      - ${DOCKER_PATH}/config/nginx.conf:/usr/local/nginx/conf/nginx.conf
+      - ${DOCKER_PATH}/config/run.sh:/home/config/run.sh
+    ports:
+      - "80:80"
+      - "443:443"
+    command:
+      - /home/config/run.sh
